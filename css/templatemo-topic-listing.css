@@ -146,16 +146,16 @@ strong {
   background-color: var(--section-bg-color);
 }
 
-.section-overlay {
-  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  width: 100%;
-  height: 100%;
-  opacity: 0.85;
-}
+/*.section-overlay {*/
+/*  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  pointer-events: none;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  opacity: 0.85;*/
+/*}*/
 
 .section-overlay + .container {
   position: relative;
@@ -726,7 +726,7 @@ blockquote {
   TIMELINE              
 -----------------------------------------*/
 .timeline-section {
-  background-image: url('../images/colleagues-working-cozy-office-medium-shot.jpg');
+  /*background-image: url('');*/
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1077,12 +1077,12 @@ blockquote {
 
   .navbar-nav .dropdown-menu {
     position: relative;
-    left: 10px;
+    /*left: 10px;*/
     opacity: 1;
     pointer-events: auto;
-    max-width: 155px;
+    /*max-width: 155px;*/
     margin-top: 10px;
-    margin-bottom: 15px;
+    /*margin-bottom: 15px;*/
   }
 
   .navbar-expand-lg .navbar-nav {
