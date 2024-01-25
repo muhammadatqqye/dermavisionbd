@@ -10,9 +10,9 @@ https://templatemo.com/tm-590-topic-listing
   CUSTOM PROPERTIES ( VARIABLES )             
 -----------------------------------------*/
 :root {
-  --white-color:                  #ffffff;
+  --white-color: #f9f9f9;
   --primary-color:                #13547a;
-  --secondary-color:              #80d0c7;
+  --secondary-color: #f9f9f9;
   --section-bg-color:             #f0f8ff;
   --custom-btn-bg-color:          #80d0c7;
   --custom-btn-bg-hover-color:    #13547a;
@@ -284,11 +284,11 @@ strong {
 }
 
 .sticky-wrapper.is-sticky .navbar {
-  background-color: var(--secondary-color);
+  background-color: #f0f8ff;
 }
 
 .navbar {
-  background: transparent;
+  background: #f0f8ff;
   border-bottom: 1px solid rgba(128, 208, 199, 0.35);
   z-index: 9;
 }
@@ -312,7 +312,7 @@ strong {
 
 .navbar-nav .nav-link {
   display: inline-block;
-  color: var(--white-color);
+  color: black;
   font-family: var(--title-font-family); 
   font-size: var(--menu-font-size);
   font-weight: var(--font-weight-medium);
@@ -368,7 +368,7 @@ strong {
 .navbar .dropdown-item:active,
 .navbar .dropdown-item:focus, 
 .navbar .dropdown-item:hover {
-  background: transparent;
+  background: #f0f8ff;
   color: var(--primary-color);
 }
 
@@ -431,7 +431,7 @@ strong {
 }
 
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-  background: transparent;
+  background: black;
 }
 
 .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before,
@@ -451,7 +451,7 @@ strong {
 }
 
 .navbar-toggler .navbar-toggler-icon {
-  background: var(--white-color);
+  background: black;
   transition: background 10ms 300ms ease;
   display: block;
   width: 30px;
@@ -486,7 +486,7 @@ strong {
   HERO        
 -----------------------------------------*/
 .hero-section {
-  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  background-image: linear-gradient(15deg, rgba(19, 84, 122, 0) 0%, rgba(128, 208, 199, 0) 100%);
   position: relative;
   overflow: hidden;
   padding-top: 150px;
@@ -945,7 +945,7 @@ blockquote {
 }
 
 .site-footer-title {
-  color: var(--primary-color); 
+  color: var(--primary-color);
 }
 
 .site-footer .dropdown-menu {
@@ -993,7 +993,7 @@ blockquote {
 }
 
 .site-footer-link {
-  color: var(--secondary-color);
+  color: black;
   font-size: var(--copyright-font-size);
   font-weight: var(--font-weight-medium);
   line-height: normal;

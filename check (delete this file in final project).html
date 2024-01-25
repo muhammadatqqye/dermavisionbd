@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Style for the dropdownn container */
+        .dropdownn {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Style for the search input */
+        .search-input {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Style for the dropdownn list */
+        .dropdownn-list {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        /* Style for each dropdownn item */
+        .dropdownn-item {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        /* Style for the active (highlighted) item */
+        .dropdownn-item:hover {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dropdownn">
+    <input type="text" class="search-input" placeholder="Search..." oninput="filterItems()">
+    <div class="dropdownn-list" id="dropdownnList">
+        <div class="dropdownn-item" onclick="selectItem('Paner', 'https://supplement.noor-mart.com/product/paner-tablets-ciGVdK')">Paner</div>
+        <div class="dropdownn-item" onclick="selectItem('Panfertil', 'https://supplement.noor-mart.com/product/panfertil-s9q6Zv')">Panfertil</div>
+        <div class="dropdownn-item" onclick="selectItem('DHEA', 'https://supplement.noor-mart.com/product/dhea-tablets-GJlHYK')">DHEA</div>
+        <div class="dropdownn-item" onclick="selectItem('Fertilla', 'https://supplement.noor-mart.com/product/fertilla-tablets-apgO98')">Fertilla</div>
+
+        <!-- Add more items as needed -->
+    </div>
+</div>
+
+<script>
+    // Function to filter dropdownn items based on the search input
+    function filterItems() {
+        var input, filter, dropdownn, items, i, txtValue;
+        input = document.querySelector('.search-input');
+        filter = input.value.toUpperCase();
+        dropdownn = document.getElementById('dropdownnList');
+        items = dropdownn.getElementsByClassName('dropdownn-item');
+
+        for (i = 0; i < items.length; i++) {
+            txtValue = items[i].textContent || items[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                items[i].style.display = '';
+            } else {
+                items[i].style.display = 'none';
+            }
+        }
+    }
+
+    // Function to handle the selection of a dropdownn item and redirect
+    function selectItem(value, link) {
+        document.querySelector('.search-input').value = value;
+        window.open(link, '_blank'); // Open the link in a new tab
+    }
+
+    // Function to close the dropdownn list
+    function closedropdownn() {
+        document.getElementById('dropdownnList').style.display = 'none';
+    }
+
+    // Show the dropdownn list when the input is focused
+    document.querySelector('.search-input').addEventListener('focus', function() {
+        document.getElementById('dropdownnList').style.display = 'block';
+    });
+
+    // Close the dropdownn list when clicking outside of it
+    window.addEventListener('click', function(event) {
+        if (!event.target.matches('.search-input')) {
+            closedropdownn();
+        }
+    });
+</script>
+
+</body>
+</html>

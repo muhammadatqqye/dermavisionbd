@@ -25,6 +25,47 @@
     <link href="css/templatemo-topic-listing.css" rel="stylesheet">
     <!-- END CSS FILES -->
 
+    <style>
+        /* Style for the dropdownn container */
+        .dropdownn {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Style for the search input */
+        .search-input {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Style for the dropdownn list */
+        .dropdownn-list {
+            display: none;
+            position: absolute;
+            z-index: 1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        /* Style for each dropdownn item */
+        .dropdownn-item {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        /* Style for the active (highlighted) item */
+        .dropdownn-item:hover {
+            background-color: #f0f8ff;
+        }
+    </style>
+
 </head>
 
 <body id="top">
@@ -32,7 +73,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <!-- start brand logo & name -->
-                <a class="navbar-brand animate-charcter" href="index.html">
+                <a class="navbar-brand mb-2" href="index.html">
                     <i class="bi-back"></i>
                     <span>Noor Mart</span>
                 </a>
@@ -72,22 +113,22 @@
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="#section_5">Contact</a>
                         </li>
-<!-- 
+
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">Brand</a>
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink2" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">Brand</a>
 
-                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink2">
                                 <li class="list-group-item list-group-item-action list-group-item-light"><a
-                                        class="dropdown-item" href="#">Brand 1</a></li>
-
-                                <li class="list-group-item list-group-item-action list-group-item-light"><a
-                                        class="dropdown-item" href="#">Brand 2</a></li>
+                                        class="dropdown-item" target="_blank" href="https://www.dermavisionbd.com/products?id=1&data_from=brand&page=1">Babe Laboratorios</a></li>
 
                                 <li class="list-group-item list-group-item-action list-group-item-light"><a
-                                        class="dropdown-item" href="#">Brand 3</a></li>
+                                        class="dropdown-item" target="_blank" href="https://supplement.noor-mart.com/products?id=1&data_from=brand&page=1">Pharmacy Laboratories</a></li>
+
+                                <li class="list-group-item list-group-item-action list-group-item-light"><a
+                                        class="dropdown-item" target="_blank" href="https://supplement.noor-mart.com/products?id=2&data_from=brand&page=1">ValueMED Pharma</a></li>
                             </ul>
-                        </li> -->
+                        </li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button"
@@ -103,6 +144,64 @@
                                 <li class="list-group-item list-group-item-action list-group-item-light"><a
                                         class="dropdown-item" target="_blank" href="https://restaurant.noor-mart.com/">Noor Café & Restaurant</a></li>
                             </ul>
+                        </li>
+                        <li>
+                            <div class="dropdownn">
+                                <input type="text" class="search-input" placeholder="Search Product..." oninput="filterItems()">
+                                <div class="dropdownn-list" id="dropdownnList">
+                                    <div class="dropdownn-item" onclick="selectItem('Paner', 'https://supplement.noor-mart.com/product/paner-tablets-ciGVdK')">Paner</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Panfertil', 'https://supplement.noor-mart.com/product/panfertil-s9q6Zv')">Panfertil</div>
+                                    <div class="dropdownn-item" onclick="selectItem('DHEA', 'https://supplement.noor-mart.com/product/dhea-tablets-GJlHYK')">DHEA</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Fertilla', 'https://supplement.noor-mart.com/product/fertilla-tablets-apgO98')">Fertilla</div>
+<!--                                    checking bluck products-->
+                                    <div class="dropdownn-item" onclick="selectItem('Paner', 'https://supplement.noor-mart.com/product/paner-tablets-ciGVdK')">Paner</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Panfertil', 'https://supplement.noor-mart.com/product/panfertil-s9q6Zv')">Panfertil</div>
+                                    <div class="dropdownn-item" onclick="selectItem('DHEA', 'https://supplement.noor-mart.com/product/dhea-tablets-GJlHYK')">DHEA</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Fertilla', 'https://supplement.noor-mart.com/product/fertilla-tablets-apgO98')">Fertilla</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Paner', 'https://supplement.noor-mart.com/product/paner-tablets-ciGVdK')">Paner</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Panfertil', 'https://supplement.noor-mart.com/product/panfertil-s9q6Zv')">Panfertil</div>
+                                    <div class="dropdownn-item" onclick="selectItem('DHEA', 'https://supplement.noor-mart.com/product/dhea-tablets-GJlHYK')">DHEA</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Fertilla', 'https://supplement.noor-mart.com/product/fertilla-tablets-apgO98')">Fertilla</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Paner', 'https://supplement.noor-mart.com/product/paner-tablets-ciGVdK')">Paner</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Panfertil', 'https://supplement.noor-mart.com/product/panfertil-s9q6Zv')">Panfertil</div>
+                                    <div class="dropdownn-item" onclick="selectItem('DHEA', 'https://supplement.noor-mart.com/product/dhea-tablets-GJlHYK')">DHEA</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Fertilla', 'https://supplement.noor-mart.com/product/fertilla-tablets-apgO98')">Fertilla</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Paner', 'https://supplement.noor-mart.com/product/paner-tablets-ciGVdK')">Paner</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Panfertil', 'https://supplement.noor-mart.com/product/panfertil-s9q6Zv')">Panfertil</div>
+                                    <div class="dropdownn-item" onclick="selectItem('DHEA', 'https://supplement.noor-mart.com/product/dhea-tablets-GJlHYK')">DHEA</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Fertilla', 'https://supplement.noor-mart.com/product/fertilla-tablets-apgO98')">Fertilla</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Paner', 'https://supplement.noor-mart.com/product/paner-tablets-ciGVdK')">Paner</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Panfertil', 'https://supplement.noor-mart.com/product/panfertil-s9q6Zv')">Panfertil</div>
+                                    <div class="dropdownn-item" onclick="selectItem('DHEA', 'https://supplement.noor-mart.com/product/dhea-tablets-GJlHYK')">DHEA</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Fertilla', 'https://supplement.noor-mart.com/product/fertilla-tablets-apgO98')">Fertilla</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Paner', 'https://supplement.noor-mart.com/product/paner-tablets-ciGVdK')">Paner</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Panfertil', 'https://supplement.noor-mart.com/product/panfertil-s9q6Zv')">Panfertil</div>
+                                    <div class="dropdownn-item" onclick="selectItem('DHEA', 'https://supplement.noor-mart.com/product/dhea-tablets-GJlHYK')">DHEA</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Fertilla', 'https://supplement.noor-mart.com/product/fertilla-tablets-apgO98')">Fertilla</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Paner', 'https://supplement.noor-mart.com/product/paner-tablets-ciGVdK')">Paner</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Panfertil', 'https://supplement.noor-mart.com/product/panfertil-s9q6Zv')">Panfertil</div>
+                                    <div class="dropdownn-item" onclick="selectItem('DHEA', 'https://supplement.noor-mart.com/product/dhea-tablets-GJlHYK')">DHEA</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Fertilla', 'https://supplement.noor-mart.com/product/fertilla-tablets-apgO98')">Fertilla</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Paner', 'https://supplement.noor-mart.com/product/paner-tablets-ciGVdK')">Paner</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Panfertil', 'https://supplement.noor-mart.com/product/panfertil-s9q6Zv')">Panfertil</div>
+                                    <div class="dropdownn-item" onclick="selectItem('DHEA', 'https://supplement.noor-mart.com/product/dhea-tablets-GJlHYK')">DHEA</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Fertilla', 'https://supplement.noor-mart.com/product/fertilla-tablets-apgO98')">Fertilla</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Paner', 'https://supplement.noor-mart.com/product/paner-tablets-ciGVdK')">Paner</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Panfertil', 'https://supplement.noor-mart.com/product/panfertil-s9q6Zv')">Panfertil</div>
+                                    <div class="dropdownn-item" onclick="selectItem('DHEA', 'https://supplement.noor-mart.com/product/dhea-tablets-GJlHYK')">DHEA</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Fertilla', 'https://supplement.noor-mart.com/product/fertilla-tablets-apgO98')">Fertilla</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Paner', 'https://supplement.noor-mart.com/product/paner-tablets-ciGVdK')">Paner</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Panfertil', 'https://supplement.noor-mart.com/product/panfertil-s9q6Zv')">Panfertil</div>
+                                    <div class="dropdownn-item" onclick="selectItem('DHEA', 'https://supplement.noor-mart.com/product/dhea-tablets-GJlHYK')">DHEA</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Fertilla', 'https://supplement.noor-mart.com/product/fertilla-tablets-apgO98')">Fertilla</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Paner', 'https://supplement.noor-mart.com/product/paner-tablets-ciGVdK')">Paner</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Panfertil', 'https://supplement.noor-mart.com/product/panfertil-s9q6Zv')">Panfertil</div>
+                                    <div class="dropdownn-item" onclick="selectItem('DHEA', 'https://supplement.noor-mart.com/product/dhea-tablets-GJlHYK')">DHEA</div>
+                                    <div class="dropdownn-item" onclick="selectItem('Fertilla', 'https://supplement.noor-mart.com/product/fertilla-tablets-apgO98')">Fertilla</div>
+                                    
+                                    <!-- Add more items as needed -->
+                                </div>
+                            </div>
                         </li>
                     </ul>
                     
@@ -127,7 +226,7 @@
 
                     <!-- start Headling, Tagline & Slogun -->
                     <div class="col-lg-8 col-12 mx-auto">
-                        <h1 class="text-white text-center">Medicine for Your Health</h1>
+                        <h1 class="text-center">Medicine for Your Health</h1>
                         <!-- <h1 class="text-white text-center">Dedicated to Providing Quality Healthcare</h1> -->
 
                         <h6 class="text-center">Trusted healthcare for you and your family.</h6>
@@ -164,9 +263,9 @@
                     <div class="col-lg-4 col-12 mb-4 mb-lg-0">
                         <div class="custom-block bg-gradient shadow-lg">
                             <a href="https://www.dermavisionbd.com/" target="_blank">
-                                <div class="d-flex bg-black bg-opacity-50 text-center rounded-4 p-3">
+                                <div class="d-flex bg-opacity-50 text-center rounded-4 p-3">
                                     <div>
-                                        <h5 class="mb-2 text-light">Derma Vision Bangladesh Limited</h5>
+                                        <h5 class="mb-2">Derma Vision Bangladesh Limited</h5>
                                         <!-- <p class="mb-0 text-light">Enter your Company Info Here with minimum details -->
 <!--                                        </p>-->
                                     </div>
@@ -180,9 +279,9 @@
                     <div class="col-lg-4 col-12 mb-4 mb-lg-0">
                         <div class="custom-block bg-gradient shadow-lg">
                             <a href="https://supplement.noor-mart.com/" target="_blank">
-                                <div class="d-flex bg-black bg-opacity-50 text-center rounded-4 p-3">
+                                <div class="d-flex bg-opacity-50 text-center rounded-4 p-3">
                                     <div>
-                                        <h5 class="mb-2 text-light">Provital International</h5>
+                                        <h5 class="mb-2">Provital International</h5>
                                         <!-- <p class="mb-0 text-light">Enter your Company Info Here with minimum details -->
 <!--                                        </p>-->
                                     </div>
@@ -196,9 +295,9 @@
                     <div class="col-lg-4 col-12 mb-lg-0">
                         <div class="custom-block bg-gradient shadow-lg">
                             <a href="https://restaurant.noor-mart.com/" target="_blank">
-                                <div class="d-flex bg-black bg-opacity-50 text-center rounded-4 p-3">
+                                <div class="d-flex bg-opacity-50 text-center rounded-4 p-3">
                                     <div>
-                                        <h5 class="mb-2 text-light">Noor Café & Restaurant</h5>
+                                        <h5 class="mb-2">Noor Café & Restaurant</h5>
                                         <!-- <p class="mb-0 text-light">Enter your Company Info Here with minimum details -->
                                         <!--                                        </p>-->
                                     </div>
@@ -214,348 +313,348 @@
         </section>
         <!-- end 3 web site cards -->
 
-        <!-- start Employee Information -->
-<!--        <section class="explore-section section-padding" id="section_2">-->
-<!--            <div class="container">-->
+<!--         start Employee Information -->
+        <section class="explore-section section-padding" id="section_2">
+            <div class="container">
 
-<!--                <div class="col-12 text-center">-->
-<!--                    <h2 class="mb-4">Employees</h2>-->
-<!--                </div>-->
+                <div class="col-12 text-center">
+                    <h2 class="mb-4">Employees</h2>
+                </div>
 
-<!--            </div>-->
+            </div>
 
-<!--            <div class="container-fluid">-->
-<!--                <div class="row">-->
-<!--                    <ul class="nav nav-tabs" id="myTab" role="tablist">-->
-<!--                        <li class="nav-item" role="presentation">-->
-<!--                            <button class="nav-link active" id="design-tab" data-bs-toggle="tab"-->
-<!--                                data-bs-target="#design-tab-pane" type="button" role="tab"-->
-<!--                                aria-controls="design-tab-pane" aria-selected="true">Department</button>-->
-<!--                        </li>-->
+            <div class="container-fluid">
+                <div class="row">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="design-tab" data-bs-toggle="tab"
+                                data-bs-target="#design-tab-pane" type="button" role="tab"
+                                aria-controls="design-tab-pane" aria-selected="true">Department</button>
+                        </li>
 
-<!--                        <li class="nav-item" role="presentation">-->
-<!--                            <button class="nav-link" id="marketing-tab" data-bs-toggle="tab"-->
-<!--                                data-bs-target="#marketing-tab-pane" type="button" role="tab"-->
-<!--                                aria-controls="marketing-tab-pane" aria-selected="false">Department</button>-->
-<!--                        </li>-->
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="marketing-tab" data-bs-toggle="tab"
+                                data-bs-target="#marketing-tab-pane" type="button" role="tab"
+                                aria-controls="marketing-tab-pane" aria-selected="false">Department</button>
+                        </li>
 
-<!--                        <li class="nav-item" role="presentation">-->
-<!--                            <button class="nav-link" id="finance-tab" data-bs-toggle="tab"-->
-<!--                                data-bs-target="#finance-tab-pane" type="button" role="tab"-->
-<!--                                aria-controls="finance-tab-pane" aria-selected="false">Department</button>-->
-<!--                        </li>-->
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="finance-tab" data-bs-toggle="tab"
+                                data-bs-target="#finance-tab-pane" type="button" role="tab"
+                                aria-controls="finance-tab-pane" aria-selected="false">Department</button>
+                        </li>
 
-<!--                        <li class="nav-item" role="presentation">-->
-<!--                            <button class="nav-link" id="music-tab" data-bs-toggle="tab"-->
-<!--                                data-bs-target="#music-tab-pane" type="button" role="tab" aria-controls="music-tab-pane"-->
-<!--                                aria-selected="false">Department</button>-->
-<!--                        </li>-->
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="music-tab" data-bs-toggle="tab"
+                                data-bs-target="#music-tab-pane" type="button" role="tab" aria-controls="music-tab-pane"
+                                aria-selected="false">Department</button>
+                        </li>
 
-<!--                        <li class="nav-item" role="presentation">-->
-<!--                            <button class="nav-link" id="education-tab" data-bs-toggle="tab"-->
-<!--                                data-bs-target="#education-tab-pane" type="button" role="tab"-->
-<!--                                aria-controls="education-tab-pane" aria-selected="false">Department</button>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="education-tab" data-bs-toggle="tab"
+                                data-bs-target="#education-tab-pane" type="button" role="tab"
+                                aria-controls="education-tab-pane" aria-selected="false">Department</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
-<!--            <div class="container">-->
-<!--                <div class="row">-->
+            <div class="container">
+                <div class="row">
 
-<!--                    <div class="col-12">-->
-<!--                        <div class="tab-content" id="myTabContent">-->
-<!--                            <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel"-->
-<!--                                aria-labelledby="design-tab" tabindex="0">-->
-<!--                                <div class="row">-->
-<!--                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">-->
-<!--                                        <div class="custom-block bg-white shadow-lg">-->
-<!--                                            <a href="#">-->
-<!--                                                <div class="d-flex">-->
-<!--                                                    <div>-->
-<!--                                                        <h5 class="mb-2">Name</h5>-->
+                    <div class="col-12">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel"
+                                aria-labelledby="design-tab" tabindex="0">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="#">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Name</h5>
 
-<!--                                                        <p class="mb-0">Title & Designation-->
-<!--                                                        </p>-->
-<!--                                                    </div>-->
+                                                        <p class="mb-0">Title & Designation
+                                                        </p>
+                                                    </div>
 
-<!--                                                    <span class="badge bg-design rounded-pill ms-auto">14</span>-->
-<!--                                                </div>-->
+                                                    <span class="badge bg-design rounded-pill ms-auto">14</span>
+                                                </div>
 
-<!--                                                <img src="images/topics/undraw_Remote_design_team_re_urdx.png"-->
-<!--                                                    class="custom-block-image img-fluid" alt="">-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                                <img src="images/topics/undraw_Remote_design_team_re_urdx.png"
+                                                    class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
 
-<!--                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">-->
-<!--                                        <div class="custom-block bg-white shadow-lg">-->
-<!--                                            <a href="#">-->
-<!--                                                <div class="d-flex">-->
-<!--                                                    <div>-->
-<!--                                                        <h5 class="mb-2">Name</h5>-->
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="#">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Name</h5>
 
-<!--                                                        <p class="mb-0">Title & Designation-->
-<!--                                                        </p>-->
-<!--                                                    </div>-->
+                                                        <p class="mb-0">Title & Designation
+                                                        </p>
+                                                    </div>
 
-<!--                                                    <span class="badge bg-design rounded-pill ms-auto">75</span>-->
-<!--                                                </div>-->
+                                                    <span class="badge bg-design rounded-pill ms-auto">75</span>
+                                                </div>
 
-<!--                                                <img src="images/topics/undraw_Redesign_feedback_re_jvm0.png"-->
-<!--                                                    class="custom-block-image img-fluid" alt="">-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                                <img src="images/topics/undraw_Redesign_feedback_re_jvm0.png"
+                                                    class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
 
-<!--                                    <div class="col-lg-4 col-md-6 col-12">-->
-<!--                                        <div class="custom-block bg-white shadow-lg">-->
-<!--                                            <a href="#">-->
-<!--                                                <div class="d-flex">-->
-<!--                                                    <div>-->
-<!--                                                        <h5 class="mb-2">Name</h5>-->
+                                    <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="#">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Name</h5>
 
-<!--                                                        <p class="mb-0">Title & Designation-->
-<!--                                                        </p>-->
-<!--                                                    </div>-->
+                                                        <p class="mb-0">Title & Designation
+                                                        </p>
+                                                    </div>
 
-<!--                                                    <span class="badge bg-design rounded-pill ms-auto">100</span>-->
-<!--                                                </div>-->
+                                                    <span class="badge bg-design rounded-pill ms-auto">100</span>
+                                                </div>
 
-<!--                                                <img src="images/topics/colleagues-working-cozy-office-medium-shot.png"-->
-<!--                                                    class="custom-block-image img-fluid" alt="">-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                                                <img src="images/topics/colleagues-working-cozy-office-medium-shot.png"
+                                                    class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-<!--                            <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel"-->
-<!--                                aria-labelledby="marketing-tab" tabindex="0">-->
-<!--                                <div class="row">-->
-<!--                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">-->
-<!--                                        <div class="custom-block bg-white shadow-lg">-->
-<!--                                            <a href="#">-->
-<!--                                                <div class="d-flex">-->
-<!--                                                    <div>-->
-<!--                                                        <h5 class="mb-2">Name</h5>-->
+                            <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel"
+                                aria-labelledby="marketing-tab" tabindex="0">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="#">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Name</h5>
 
-<!--                                                        <p class="mb-0">Title & Designation-->
-<!--                                                        </p>-->
-<!--                                                    </div>-->
+                                                        <p class="mb-0">Title & Designation
+                                                        </p>
+                                                    </div>
 
-<!--                                                    <span class="badge bg-advertising rounded-pill ms-auto">30</span>-->
-<!--                                                </div>-->
+                                                    <span class="badge bg-advertising rounded-pill ms-auto">30</span>
+                                                </div>
 
-<!--                                                <img src="images/topics/undraw_online_ad_re_ol62.png"-->
-<!--                                                    class="custom-block-image img-fluid" alt="">-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                                <img src="images/topics/undraw_online_ad_re_ol62.png"
+                                                    class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
 
-<!--                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">-->
-<!--                                        <div class="custom-block bg-white shadow-lg">-->
-<!--                                            <a href="#">-->
-<!--                                                <div class="d-flex">-->
-<!--                                                    <div>-->
-<!--                                                        <h5 class="mb-2">Name</h5>-->
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="#">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Name</h5>
 
-<!--                                                        <p class="mb-0">Title & Designation-->
-<!--                                                        </p>-->
-<!--                                                    </div>-->
+                                                        <p class="mb-0">Title & Designation
+                                                        </p>
+                                                    </div>
 
-<!--                                                    <span class="badge bg-advertising rounded-pill ms-auto">65</span>-->
-<!--                                                </div>-->
+                                                    <span class="badge bg-advertising rounded-pill ms-auto">65</span>
+                                                </div>
 
-<!--                                                <img src="images/topics/undraw_Group_video_re_btu7.png"-->
-<!--                                                    class="custom-block-image img-fluid" alt="">-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                                <img src="images/topics/undraw_Group_video_re_btu7.png"
+                                                    class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
 
-<!--                                    <div class="col-lg-4 col-md-6 col-12">-->
-<!--                                        <div class="custom-block bg-white shadow-lg">-->
-<!--                                            <a href="#">-->
-<!--                                                <div class="d-flex">-->
-<!--                                                    <div>-->
-<!--                                                        <h5 class="mb-2">Name</h5>-->
+                                    <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="#">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Name</h5>
 
-<!--                                                        <p class="mb-0">Title & Designation-->
-<!--                                                        </p>-->
-<!--                                                    </div>-->
+                                                        <p class="mb-0">Title & Designation
+                                                        </p>
+                                                    </div>
 
-<!--                                                    <span class="badge bg-advertising rounded-pill ms-auto">50</span>-->
-<!--                                                </div>-->
+                                                    <span class="badge bg-advertising rounded-pill ms-auto">50</span>
+                                                </div>
 
-<!--                                                <img src="images/topics/undraw_viral_tweet_gndb.png"-->
-<!--                                                    class="custom-block-image img-fluid" alt="">-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                                                <img src="images/topics/undraw_viral_tweet_gndb.png"
+                                                    class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-<!--                            <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel"-->
-<!--                                aria-labelledby="finance-tab" tabindex="0">-->
-<!--                                <div class="row">-->
-<!--                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">-->
-<!--                                        <div class="custom-block bg-white shadow-lg">-->
-<!--                                            <a href="#">-->
-<!--                                                <div class="d-flex">-->
-<!--                                                    <div>-->
-<!--                                                        <h5 class="mb-2">Name</h5>-->
+                            <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel"
+                                aria-labelledby="finance-tab" tabindex="0">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="#">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Name</h5>
 
-<!--                                                        <p class="mb-0">Title & Designation-->
-<!--                                                        </p>-->
-<!--                                                    </div>-->
+                                                        <p class="mb-0">Title & Designation
+                                                        </p>
+                                                    </div>
 
-<!--                                                    <span class="badge bg-finance rounded-pill ms-auto">30</span>-->
-<!--                                                </div>-->
+                                                    <span class="badge bg-finance rounded-pill ms-auto">30</span>
+                                                </div>
 
-<!--                                                <img src="images/topics/undraw_Finance_re_gnv2.png"-->
-<!--                                                    class="custom-block-image img-fluid" alt="">-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                                <img src="images/topics/undraw_Finance_re_gnv2.png"
+                                                    class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
 
-<!--                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">-->
-<!--                                        <div class="custom-block bg-white shadow-lg">-->
-<!--                                            <a href="#">-->
-<!--                                                <div class="d-flex">-->
-<!--                                                    <div>-->
-<!--                                                        <h5 class="mb-2">Name</h5>-->
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="#">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Name</h5>
 
-<!--                                                        <p class="mb-0">Title & Designation-->
-<!--                                                        </p>-->
-<!--                                                    </div>-->
+                                                        <p class="mb-0">Title & Designation
+                                                        </p>
+                                                    </div>
 
-<!--                                                    <span class="badge bg-finance rounded-pill ms-auto">30</span>-->
-<!--                                                </div>-->
+                                                    <span class="badge bg-finance rounded-pill ms-auto">30</span>
+                                                </div>
 
-<!--                                                <img src="images/topics/undraw_Finance_re_gnv2.png"-->
-<!--                                                    class="custom-block-image img-fluid" alt="">-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                                                <img src="images/topics/undraw_Finance_re_gnv2.png"
+                                                    class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-<!--                            <div class="tab-pane fade" id="music-tab-pane" role="tabpanel" aria-labelledby="music-tab"-->
-<!--                                tabindex="0">-->
-<!--                                <div class="row">-->
-<!--                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">-->
-<!--                                        <div class="custom-block bg-white shadow-lg">-->
-<!--                                            <a href="#">-->
-<!--                                                <div class="d-flex">-->
-<!--                                                    <div>-->
-<!--                                                        <h5 class="mb-2">Name</h5>-->
+                            <div class="tab-pane fade" id="music-tab-pane" role="tabpanel" aria-labelledby="music-tab"
+                                tabindex="0">
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="#">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Name</h5>
 
-<!--                                                        <p class="mb-0">Title & Designation-->
-<!--                                                        </p>-->
-<!--                                                    </div>-->
+                                                        <p class="mb-0">Title & Designation
+                                                        </p>
+                                                    </div>
 
-<!--                                                    <span class="badge bg-music rounded-pill ms-auto">45</span>-->
-<!--                                                </div>-->
+                                                    <span class="badge bg-music rounded-pill ms-auto">45</span>
+                                                </div>
 
-<!--                                                <img src="images/topics/undraw_Compose_music_re_wpiw.png"-->
-<!--                                                    class="custom-block-image img-fluid" alt="">-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                                <img src="images/topics/undraw_Compose_music_re_wpiw.png"
+                                                    class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
 
-<!--                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">-->
-<!--                                        <div class="custom-block bg-white shadow-lg">-->
-<!--                                            <a href="#">-->
-<!--                                                <div class="d-flex">-->
-<!--                                                    <div>-->
-<!--                                                        <h5 class="mb-2">Name</h5>-->
+                                    <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="#">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Name</h5>
 
-<!--                                                        <p class="mb-0">Title & Designation-->
-<!--                                                        </p>-->
-<!--                                                    </div>-->
+                                                        <p class="mb-0">Title & Designation
+                                                        </p>
+                                                    </div>
 
-<!--                                                    <span class="badge bg-music rounded-pill ms-auto">45</span>-->
-<!--                                                </div>-->
+                                                    <span class="badge bg-music rounded-pill ms-auto">45</span>
+                                                </div>
 
-<!--                                                <img src="images/topics/undraw_happy_music_g6wc.png"-->
-<!--                                                    class="custom-block-image img-fluid" alt="">-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                                <img src="images/topics/undraw_happy_music_g6wc.png"
+                                                    class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
 
-<!--                                    <div class="col-lg-4 col-md-6 col-12">-->
-<!--                                        <div class="custom-block bg-white shadow-lg">-->
-<!--                                            <a href="#">-->
-<!--                                                <div class="d-flex">-->
-<!--                                                    <div>-->
-<!--                                                        <h5 class="mb-2">Name</h5>-->
+                                    <div class="col-lg-4 col-md-6 col-12">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="#">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Name</h5>
 
-<!--                                                        <p class="mb-0">Title & Designation-->
-<!--                                                        </p>-->
-<!--                                                    </div>-->
+                                                        <p class="mb-0">Title & Designation
+                                                        </p>
+                                                    </div>
 
-<!--                                                    <span class="badge bg-music rounded-pill ms-auto">20</span>-->
-<!--                                                </div>-->
+                                                    <span class="badge bg-music rounded-pill ms-auto">20</span>
+                                                </div>
 
-<!--                                                <img src="images/topics/undraw_Podcast_audience_re_4i5q.png"-->
-<!--                                                    class="custom-block-image img-fluid" alt="">-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                                                <img src="images/topics/undraw_Podcast_audience_re_4i5q.png"
+                                                    class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-<!--                            <div class="tab-pane fade" id="education-tab-pane" role="tabpanel"-->
-<!--                                aria-labelledby="education-tab" tabindex="0">-->
-<!--                                <div class="row">-->
-<!--                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">-->
-<!--                                        <div class="custom-block bg-white shadow-lg">-->
-<!--                                            <a href="#">-->
-<!--                                                <div class="d-flex">-->
-<!--                                                    <div>-->
-<!--                                                        <h5 class="mb-2">Name</h5>-->
+                            <div class="tab-pane fade" id="education-tab-pane" role="tabpanel"
+                                aria-labelledby="education-tab" tabindex="0">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="#">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Name</h5>
 
-<!--                                                        <p class="mb-0">Title & Designation-->
-<!--                                                        </p>-->
-<!--                                                    </div>-->
+                                                        <p class="mb-0">Title & Designation
+                                                        </p>
+                                                    </div>
 
-<!--                                                    <span class="badge bg-education rounded-pill ms-auto">80</span>-->
-<!--                                                </div>-->
+                                                    <span class="badge bg-education rounded-pill ms-auto">80</span>
+                                                </div>
 
-<!--                                                <img src="images/topics/undraw_Graduation_re_gthn.png"-->
-<!--                                                    class="custom-block-image img-fluid" alt="">-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+                                                <img src="images/topics/undraw_Graduation_re_gthn.png"
+                                                    class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
 
-<!--                                    <div class="col-lg-6 col-md-6 col-12">-->
-<!--                                        <div class="custom-block bg-white shadow-lg">-->
-<!--                                            <a href="#">-->
-<!--                                                <div class="d-flex">-->
-<!--                                                    <div>-->
-<!--                                                        <h5 class="mb-2">Name</h5>-->
+                                    <div class="col-lg-6 col-md-6 col-12">
+                                        <div class="custom-block bg-white shadow-lg">
+                                            <a href="#">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">Name</h5>
 
-<!--                                                        <p class="mb-0">Title & Designation-->
-<!--                                                        </p>-->
-<!--                                                    </div>-->
+                                                        <p class="mb-0">Title & Designation
+                                                        </p>
+                                                    </div>
 
-<!--                                                    <span class="badge bg-education rounded-pill ms-auto">75</span>-->
-<!--                                                </div>-->
+                                                    <span class="badge bg-education rounded-pill ms-auto">75</span>
+                                                </div>
 
-<!--                                                <img src="images/topics/undraw_Educator_re_ju47.png"-->
-<!--                                                    class="custom-block-image img-fluid" alt="">-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                                                <img src="images/topics/undraw_Educator_re_ju47.png"
+                                                    class="custom-block-image img-fluid" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </section>-->
-        <!-- end Employee Information -->
+                    </div>
+                </div>
+            </div>
+        </section>
+<!--         end Employee Information -->
 
         <!-- start photo gallery -->
         <section class="timeline-section section-padding" id="section_3">
@@ -826,6 +925,50 @@
     <script src="js/jquery.sticky.js"></script>
     <script src="js/click-scroll.js"></script>
     <script src="js/custom.js"></script>
+
+    <!--Internal Javascript-->
+    <script>
+        // Function to filter dropdownn items based on the search input
+        function filterItems() {
+            var input, filter, dropdownn, items, i, txtValue;
+            input = document.querySelector('.search-input');
+            filter = input.value.toUpperCase();
+            dropdownn = document.getElementById('dropdownnList');
+            items = dropdownn.getElementsByClassName('dropdownn-item');
+
+            for (i = 0; i < items.length; i++) {
+                txtValue = items[i].textContent || items[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    items[i].style.display = '';
+                } else {
+                    items[i].style.display = 'none';
+                }
+            }
+        }
+
+        // Function to handle the selection of a dropdownn item and redirect
+        function selectItem(value, link) {
+            document.querySelector('.search-input').value = value;
+            window.open(link, '_blank'); // Open the link in a new tab
+        }
+
+        // Function to close the dropdownn list
+        function closedropdownn() {
+            document.getElementById('dropdownnList').style.display = 'none';
+        }
+
+        // Show the dropdownn list when the input is focused
+        document.querySelector('.search-input').addEventListener('focus', function() {
+            document.getElementById('dropdownnList').style.display = 'block';
+        });
+
+        // Close the dropdownn list when clicking outside of it
+        window.addEventListener('click', function(event) {
+            if (!event.target.matches('.search-input')) {
+                closedropdownn();
+            }
+        });
+    </script>
 
 </body>
 
